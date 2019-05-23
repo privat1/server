@@ -6561,7 +6561,7 @@ dict_close(void)
 	mutex_free(&dict_foreign_err_mutex);
 
 	if (dict_foreign_err_file) {
-		fclose(dict_foreign_err_file);
+		my_fclose(dict_foreign_err_file, MYF(MY_WME));
 		dict_foreign_err_file = NULL;
 	}
 
